@@ -12,7 +12,6 @@ import java.io.Serializable;
 import java.time.Instant;
 
 @Data
-@Builder
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public class AbstractEntity implements Serializable {

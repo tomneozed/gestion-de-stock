@@ -4,9 +4,9 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
@@ -31,7 +31,22 @@ public class Article extends AbstractEntity {
     @Column(name = "photo")
     private String photo;
 
+    @Column(name = "identreprise")
+    private Integer idEntreprise;
+
     @ManyToOne
     @JoinColumn(name = "idcategory")
     private Category category;
+
+    @OneToMany(mappedBy = "article")
+    private List<LigneVente> ligneVentes;
+
+    @OneToMany(mappedBy = "article")
+    private List<LigneCommandeClient> ligneCommandeClients;
+
+    @OneToMany(mappedBy = "article")
+    private List<LigneCommandeFournisseur> ligneCommandeFournisseurs;
+
+    @OneToMany(mappedBy = "article")
+    private List<MvtStk> mvtStks;
 }
