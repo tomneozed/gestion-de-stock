@@ -2,9 +2,10 @@ package com.tom.gestiondestock.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
@@ -27,6 +28,4 @@ public class Adresse {
 
     @Column(name = "pays")
     private String pays;
-
-
 }
